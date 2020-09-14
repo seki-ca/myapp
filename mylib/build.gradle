@@ -29,7 +29,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "file://$rootDir/.m2/repository"
-            pom.version = '1.0.2'
+            pom.version = '1.0.3'
             pom.groupId = 'com.example'
             pom.artifactId = 'mylib'
         }
