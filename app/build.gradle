@@ -16,6 +16,28 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "default"
+
+    signingConfigs {
+        release {
+            storeFile file("conf/releaseKey.jks")
+            storePassword "eWrQ3sxw"
+            keyAlias "releaseKey"
+            keyPassword "eWrQ3sxw"
+        }
+    }
+
+    productFlavors {
+        stg {
+            applicationIdSuffix ".stg"
+            signingConfig signingConfigs.release
+        }
+        prod {
+            applicationIdSuffix ""
+            signingConfig signingConfigs.release
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
